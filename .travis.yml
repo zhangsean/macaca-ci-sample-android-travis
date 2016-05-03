@@ -5,7 +5,7 @@ jdk:
   - oraclejdk7
 android:
   components:
-    - build-tools-22.0.1
+    - build-tools-23.0.2
     - android-23
     - extra-android-m2repository
     - extra-android-support
@@ -13,7 +13,7 @@ env:
   - JAVA_HOME=/usr/lib/jvm/java-7-oracle
   - ANDROID_HOME=/usr/local/android-sdk
 before_install:
-  - echo yes | android update sdk --all --filter build-tools-23.0.1 --no-ui --force
+  - echo yes | android update sdk --all --filter build-tools-23.0.2 --no-ui --force
 before_script:
   - . $HOME/.nvm/nvm.sh
   - nvm install 4
