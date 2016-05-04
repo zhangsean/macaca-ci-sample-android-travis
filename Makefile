@@ -5,7 +5,7 @@ all: test
 install:
 	@npm install
 test: install
-	cd ./node_modules/macaca-test-sample && make test-android
+	cd ./node_modules/macaca-test-sample && make travis-android
 jshint:
 	@${npm_bin}/jshint .
 .PHONY: test
