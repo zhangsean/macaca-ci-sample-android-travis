@@ -1,19 +1,24 @@
 language: android
 sudo: false
+addons:
+  apt:
+    packages:
+    - xvfb
 jdk:
   - openjdk7
-  - oraclejdk7
 android:
   components:
     - build-tools-23.0.2
     - android-23
     - extra-android-m2repository
     - extra-android-support
-env:
-  - JAVA_HOME=/usr/lib/jvm/java-7-oracle
-  - ANDROID_HOME=/usr/local/android-sdk
 before_install:
+  - export CHROME_BIN=chromium-browser
+  - export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+  - export ANDROID_HOME=/usr/local/android-sdk
   - echo yes | android update sdk --all --filter build-tools-23.0.2 --no-ui --force
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 before_script:
   - . $HOME/.nvm/nvm.sh
   - nvm install 4
