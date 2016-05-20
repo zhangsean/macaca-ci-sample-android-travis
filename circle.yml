@@ -1,0 +1,32 @@
+general:
+  branches:
+    ignore:
+      - gh-pages # list of branches to ignore
+machine:
+  node:
+    version: v4.2.1
+  java:
+    version: oraclejdk8
+  environment:
+    ANDROID_HOME: /usr/local/android-sdk-linux
+
+dependencies:
+  override:
+    - echo y | android update sdk --no-ui --filter "android-19"
+    - echo y | android update sdk --no-ui --filter "build-tools-19.1.0"
+    - echo y | android update sdk --no-ui --filter "extra-android-m2repository"
+    - echo y | android update sdk --no-ui --filter "extra-android-support"
+    - echo y | android update sdk --no-ui --filter "extra-google-m2repositor"
+
+test:
+  override:
+      # start the emulator
+    - emulator -avd circleci-android22 -no-audio -no-window:
+        background: true
+        parallel: true
+    # wait for it to have booted
+    - circle-android wait-for-boot
+    # Unlock the screen
+    - adb shell input keyevent 82
+    # run tests  against the emulator.
+    - make test
