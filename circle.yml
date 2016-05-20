@@ -1,0 +1,19 @@
+general:
+  branches:
+    ignore:
+      - gh-pages # list of branches to ignore
+machine:
+  node:
+    version: v4.2.1
+test:
+  override:
+    # start the emulator
+    - emulator -avd circleci-android22 -no-audio -no-window:
+        background: true
+        parallel: true
+    # wait for it to have booted
+    - circle-android wait-for-boot
+    # Unlock the screen
+    - adb shell input keyevent 82
+    # run tests  against the emulator.
+    - make test 
