@@ -16,4 +16,4 @@ test:
     # Unlock the screen
     - adb shell input keyevent 82
     # run tests  against the emulator.
-    - make test 
+    - make test
