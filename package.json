@@ -1,7 +1,7 @@
 {
   "name": "macaca-ci-sample-android-travis",
   "version": "0.1.0",
-  "description": "macaca-test-sample-android-ci",
+  "description": "macaca android travis",
   "keywords": [
     "macaca"
   ],
@@ -11,7 +11,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "macaca-test-sample": "*"
+    "mobile-app-sample-nodejs": "*"
   },
   "scripts": {
     "test": "make test",

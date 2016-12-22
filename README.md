@@ -2,10 +2,10 @@
 
 [![build status][travis-image]][travis-url]
 
-[travis-image]: https://img.shields.io/travis/xudafeng/macaca-test-sample-android-ci.svg?style=flat-square
-[travis-url]: https://travis-ci.org/xudafeng/macaca-test-sample-android-ci
+[travis-image]: https://img.shields.io/travis/macaca-sample/macaca-test-sample-android-ci.svg?style=flat-square
+[travis-url]: https://travis-ci.org/macaca-sample/macaca-test-sample-android-ci
 
-> macaca test android ci sample
+> Macaca test android ci sample
 
 ## License
 
